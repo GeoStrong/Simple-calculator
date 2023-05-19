@@ -5,15 +5,23 @@ const buttons = document.querySelectorAll('.btn');
 const lastNumber = document.querySelector('.main__descr');
 let value = [];
 
+const powerOperation = function (expression) {
+  const [number, power] = [...(expression + '')]
+    .join(',')
+    .replaceAll(',', '')
+    .split('^');
+  return Math.pow(+number, +power);
+};
+
 const operations = function (expression) {
-  if (expression.includes('^')) {
-    const [number, power] = [...(expression + '')]
-      .join(',')
-      .replaceAll(',', '')
-      .split('^');
-    return Math.pow(+number, +power);
-  } else {
-    return eval(expression.join(''));
+  try {
+    if (expression.includes('^')) {
+      return powerOperation(expression);
+    } else {
+      return eval(expression.join(''));
+    }
+  } catch (error) {
+    alert('Please Enter Valid Numbers');
   }
 };
 
@@ -47,7 +55,8 @@ buttons.forEach((button) => {
     if (symbol === '=') {
       const lastExpression = [...value].join(',').replaceAll(',', '');
       const result = operations(value);
-      input.value = result.toFixed(1);
+      // input.value = result?.toFixed(0);
+      input.value = result;
       value = [result];
       lastNumber.textContent = lastExpression;
     }

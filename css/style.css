@@ -6,6 +6,21 @@ html {
     font-size: 20px;
 }
 
+:root {
+    --background-color: #17171c;
+    --symbols-color: #fff;
+    --description-color: #68686C;
+    --row-color: #2E2F38;
+    --row-hover-color: #4f515c;
+    --row-active-color: #5f6066;
+    --row-first-color: #4E505F;
+    --row-first-hover-color: #666877;
+    --row-first-active-color: #595c6e;
+    --column-color: #4B5EFC;
+    --column-hover-color: #5f6ce2;
+    --column-active-color: #4e5cdb;
+}
+
 *,
 *::before,
 *::after {
@@ -23,29 +38,27 @@ img {
 }
 
 body {
-    background-color: #17171c;
+    background-color: var(--background-color);
     font-family: 'Work Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
 }
 
 .header {
-    margin-bottom: 2rem;
+    position: relative;
 }
 
 .header__section {
     margin: 0;
     padding-top: 1.5rem;
     text-align: center;
-    color: #fff;
+    color: var(--symbols-color);
 }
-
 
 .main__container {
     max-width: 75%;
     margin: 0 auto;
     margin-bottom: 1rem;
-    border: 1px solid gray;
     border-radius: 0.5rem;
 }
 
@@ -56,11 +69,11 @@ body {
 
 .main__descr {
     margin: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     max-height: 0.6rem;
     font-weight: 300;
-    font-size: 1.5rem;
-    color: #68686C;
+    font-size: 2rem;
+    color: var(--description-color);
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -70,12 +83,12 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .main__input {
     width: 100%;
-    height: 3rem;
+    height: 4rem;
     text-align: right;
     font-weight: 300;
-    font-size: 2.5rem;
-    color: #FFFFFF;
-    background-color: #17171c;
+    font-size: 3.5rem;
+    color: var(--symbols-color);
+    background-color: var(--background-color);
     border: none;
 }
 
@@ -88,7 +101,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .btn {
     border-radius: 1.2rem;
-    color: #fff;
+    color: var(--symbols-color);
     font-size: 1.6rem;
     line-height: 40px;
     text-align: center;
@@ -97,15 +110,43 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .btn__row {
-    background: #2E2F38;
+    background-color: var(--row-color);
+}
+
+.btn__row:hover {
+    background-color: var(--row-hover-color);
+}
+
+.btn__row:active {
+    background-color: var(--row-active-color);
 }
 
 .btn__row--first {
-    background: #4E505F;
+    background-color: var(--row-first-color);
+}
+
+.btn__row--first:hover {
+    background-color: var(--row-first-hover-color);
+}
+
+.btn__row--first:active {
+    background-color: var(--row-first-hover-color);
 }
 
 .btn__column {
-    background-color: #4B5EFC;
+    background-color: var(--column-color);
+}
+
+.btn__column:hover {
+    background-color: var(--column-hover-color);
+}
+
+.btn__column:active {
+    background-color: var(--column-active-color);
+}
+
+.btn__path {
+    fill: var(--symbols-color);
 }
 
 @media(max-width: 368px) {

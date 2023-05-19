@@ -5,16 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Calculator</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/switch.css">
 </head>
 
-<body>
+<body class="primary-color">
     <header class="header">
-        <h1 class="header__section">
+        <h1 class="header__section secondary-color">
             My First Calculator Project
         </h1>
+        <div class="switch">
+            <div class="toggle-switch">
+                <input class="toggle-input" id="toggle" type="checkbox" data-mode="night">
+                <label class="toggle-label" for="toggle"></label>
+            </div>
+        </div>
     </header>
     <main class="main">
         <div class="main__container">
@@ -22,33 +29,52 @@
                 <p class="main__descr">
                     0
                 </p>
-                <input type="text" class="main__input">
+                <input type="text" class="main__input secondary-color primary-color">
             </div>
             <div class="main__buttons">
-                <button class="btn btn__row btn__row--first" data-symbol="C">C</button>
-                <button class="btn btn__row btn__row--first" data-symbol="^">^</button>
-                <button class="btn btn__row btn__row--first" data-symbol="%">%</button>
-                <button class="btn btn__column" data-symbol="/">/</button>
-                <button class="btn btn__row" data-symbol="7">7</button>
-                <button class="btn btn__row" data-symbol="8">8</button>
-                <button class="btn btn__row" data-symbol="9">9</button>
-                <button class="btn btn__column" data-symbol="*">*</button>
-                <button class="btn btn__row" data-symbol="4">4</button>
-                <button class="btn btn__row" data-symbol="5">5</button>
-                <button class="btn btn__row" data-symbol="6">6</button>
+                <button class="btn secondary-color btn__row btn__row--first" data-symbol="C">C</button>
+                <button class="btn secondary-color btn__row btn__row--first" data-symbol="^">^</button>
+                <button class="btn secondary-color btn__row btn__row--first" data-symbol="%">%</button>
+                <button class="btn secondary-color btn__column" data-symbol="/">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15.7838 7.672V10.072H0.23175V7.672H15.7838ZM8.00775 13.08C8.62642 13.08 9.12775 13.272 9.51175 13.656C9.89575 14.04 10.0878 14.5413 10.0878 15.16C10.0878 15.7787 9.89575 16.28 9.51175 16.664C9.12775 17.048 8.62642 17.24 8.00775 17.24C7.38908 17.24 6.88775 17.048 6.50375 16.664C6.11975 16.28 5.92775 15.7787 5.92775 15.16C5.92775 14.5413 6.11975 14.04 6.50375 13.656C6.88775 13.272 7.38908 13.08 8.00775 13.08ZM8.00775 0.567999C8.62642 0.567999 9.12775 0.759999 9.51175 1.144C9.89575 1.528 10.0878 2.02933 10.0878 2.648C10.0878 3.26667 9.89575 3.768 9.51175 4.152C9.12775 4.536 8.62642 4.728 8.00775 4.728C7.38908 4.728 6.88775 4.536 6.50375 4.152C6.11975 3.768 5.92775 3.26667 5.92775 2.648C5.92775 2.02933 6.11975 1.528 6.50375 1.144C6.88775 0.759999 7.38908 0.567999 8.00775 0.567999Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <button class="btn secondary-color btn__row light" data-symbol="7">7</button>
+                <button class="btn secondary-color btn__row light" data-symbol="8">8</button>
+                <button class="btn secondary-color btn__row light" data-symbol="9">9</button>
+                <button class="btn secondary-color btn__column" data-symbol="*">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.3518 14.896L0.93575 2.48L2.63175 0.783998L15.0478 13.2L13.3518 14.896ZM2.63175 14.896L0.93575 13.2L13.3518 0.783998L15.0478 2.48L2.63175 14.896Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <button class="btn secondary-color btn__row light" data-symbol="4">4</button>
+                <button class="btn secondary-color btn__row light" data-symbol="5">5</button>
+                <button class="btn secondary-color btn__row light" data-symbol="6">6</button>
                 <button class="btn btn__column" data-symbol="-">-</button>
-                <button class="btn btn__row" data-symbol="1">1</button>
-                <button class="btn btn__row" data-symbol="2">2</button>
-                <button class="btn btn__row" data-symbol="3">3</button>
+                <button class="btn secondary-color btn__row light" data-symbol="1">1</button>
+                <button class="btn secondary-color btn__row light" data-symbol="2">2</button>
+                <button class="btn secondary-color btn__row light" data-symbol="3">3</button>
                 <button class="btn btn__column" data-symbol="+">+</button>
-                <button class="btn btn__row" data-symbol=".">.</button>
-                <button class="btn btn__row" data-symbol="0">0</button>
-                <button class="btn btn__row" data-symbol="x">x</button>
+                <button class="btn secondary-color btn__row light" data-symbol=".">.</button>
+                <button class="btn secondary-color btn__row light" data-symbol="0">0</button>
+                <button class="btn secondary-color btn__row light" data-symbol="x">
+                    <svg width="27" height="18" viewBox="0 0 27 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="btn__path" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.58582 0H10H26H27V1V17V18H26H10H9.58582L9.29292 17.7071L1.29292 9.70711L0.585815 9L1.29292 8.29289L9.29292 0.292893L9.58582 0ZM10.4142 2L3.41424 9L10.4142 16H25V2H10.4142ZM14 4.58578L14.7071 5.29288L17 7.58578L19.2929 5.29289L20 4.58579L21.4142 6L20.7071 6.70711L18.4142 9L20.7071 11.2929L21.4142 12L20 13.4142L19.2929 12.7071L17 10.4142L14.7071 12.7071L14 13.4142L12.5858 12L13.2929 11.2929L15.5858 9L13.2929 6.7071L12.5858 5.99999L14 4.58578Z"
+                            fill="white" />
+                    </svg>
+                </button>
                 <button class="btn btn__column" data-symbol="=">=</button>
             </div>
         </div>
     </main>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/theme.js"></script>
 </body>
 
 </html>
